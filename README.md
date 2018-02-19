@@ -18,6 +18,13 @@ $ git clone https://github.com/escobard/udemy-mongodb-complete.git
 
 More usage instructions on this application coming in the future.
 
+## Application breakdown
+
+- mongodb-basics-tests:
+	+ A basic testing application with MongoDB / Mongoose and Mocha.
+	+ Explore the basic accepted actions of MongoDB.
+	+ Create unit tests for each collection, to ensure data consistency.
+
 ## Contribution
 
 Feel free to contribute to any and all of the files within this repository as you see fit. These files are mainly for personal use, but my goal is to help others better understand JavaScript Object Oriented programming with my software and helpful commentary.
