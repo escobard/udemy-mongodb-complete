@@ -11,6 +11,7 @@ describe("Deleting a user", () => {
 	})
 
 	it("model instance remove", done => {
+		// uses the .remove() method of mongoose to remove the specified User instance
 		// to remove joe from our database
 		joe
 			.remove()
@@ -21,7 +22,15 @@ describe("Deleting a user", () => {
 			})
 	})
 
-	it("class method remove", () => {})
+	it("class method remove", done => {
+		// removes all User instances found with the given criteria
+		User.remove({ name: "Joe" })
+			.then(() => User.findOne({ name: "Joe" }))
+			.then(user => {
+				assert(user === null)
+				done()
+			})
+	})
 
 	it("classmethod findAndRemove", () => {})
 	it("class method findByIdAndRemove", () => {})

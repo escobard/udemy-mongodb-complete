@@ -1,14 +1,12 @@
 // loads an assertions library to handle test expecations
-const assert = require('assert')
+const assert = require("assert")
 
-const User = require('../src/user')
+const User = require("../src/user")
 
-describe("Creating user instances", () =>{
-
+describe("Creating user instances", () => {
 	// calls done to tell mocha that everything is done AFTER all other operations
 	// have been executed. done() is available for each it and beforeEach module of the testing app
-	it("saves a user", (done) =>{
-
+	it("saves a user", done => {
 		// expects an assertion, checking something
 		// assert( 1 + 1 === 2)
 
@@ -16,11 +14,12 @@ describe("Creating user instances", () =>{
 		assert( 1 + 1 === 3) */
 
 		// creates a new user with a name to test a user instance
-		const joe = new User({ name: "Joe"});
+		const joe = new User({ name: "Joe" })
 
 		// saves joe using the .save() method of mongoose
-		joe.save()
-			.then(() =>{
+		joe
+			.save()
+			.then(() => {
 				// has joe been saved succesfully?
 
 				// if joe has NOT been saved to MongoDB but exsists in mongoose, joe.isNew === true
@@ -32,6 +31,7 @@ describe("Creating user instances", () =>{
 
 				// tells mocha that we are done after the user has been saved
 				done()
-			}).catch(error => console.log('Error creating user: ', error))
+			})
+			.catch(error => console.log("Error creating user: ", error))
 	})
-}) 
+})

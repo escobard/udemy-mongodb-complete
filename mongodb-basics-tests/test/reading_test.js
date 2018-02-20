@@ -12,7 +12,7 @@ describe("Reading users out of the database", () => {
 		joe.save().then(() => done())
 	})
 
-	it("finds all users with the name of joe", done => {
+	it("find method to find all users with the name of joe", done => {
 		// the .find() method matches the given criteria / query, and finds ALL the data matching
 		// the User object comes from our User model, created with mongoose
 		// returns an array
@@ -28,7 +28,7 @@ describe("Reading users out of the database", () => {
 			.catch(error => console.log(error))
 	})
 
-	it("find a user with a particular id", done => {
+	it("findOne method to find a user with a particular id", done => {
 		// finds joe's id based on the instance created above
 		// the .findOne() method matches the first match that meets the criteria
 		// returns a single record / object
