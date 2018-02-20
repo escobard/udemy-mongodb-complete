@@ -16,6 +16,21 @@ You may also clone this locally to your computer, using the following line of co
 $ git clone https://github.com/escobard/udemy-mongodb-complete.git
 ```
 
+
+To run the tests, ensure that your application is connected a MongoDB instance (expand on that later, instructions on local usage below):
+```
+$ cd mongodb-basics-tests
+$ npm run test
+```
+
+## Optional libraries
+
+To install and run MongoDB locally, download MongoDB here: [https://www.mongodb.com/download-center#atlas](https://www.mongodb.com/download-center#atlas)
+
+For data visualization, download RoboMongo here: [https://robomongo.org/](https://robomongo.org/)
+
+
+
 More usage instructions on this application coming in the future.
 
 ## Application breakdown
