@@ -1,6 +1,8 @@
 // loads an assertions library to handle test expecations
 const assert = require('assert')
 
+const User = require('../src/user')
+
 describe("Creating user instances", () =>{
 	it("saves a user", () =>{
 
