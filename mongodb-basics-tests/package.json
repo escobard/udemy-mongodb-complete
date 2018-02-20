@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "nodemon --exec mocha",
-    "test:dev" "nodemon --exec \"mocha -R min\""
+    "test:dev": "nodemon --exec \"mocha -R min\""
   },
   "keywords": ["mongodb"],
   "author": "Daniel Escobar",

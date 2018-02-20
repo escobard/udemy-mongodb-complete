@@ -25,11 +25,20 @@ describe("Reading users out of the database", () => {
 				assert(users[0].id === joe.id)
 				done()
 			})
+			.catch(error => console.log(error))
+	})
 
+	it("find a user with a particular id", done => {
+		// finds joe's id based on the instance created above
 		// the .findOne() method matches the first match that meets the criteria
 		// returns a single record / object
 		// User.findOne()
-	})
 
-	it("find a user with a particular id", done => {})
+		User.findOne({ _id: joe.id })
+			.then(user => {
+				assert(user.name === "Joe")
+				done()
+			})
+			.catch(error => console.log(error))
+	})
 })
