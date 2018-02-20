@@ -42,8 +42,25 @@ describe("Updating records", () => {
 		// updates a single property, to the second argument
 		// this does actually update the MongoDB database unlike the .set() method
 
-		// saves the data
+		//asserts the update
 		assertName(joe.update({ name: "Alex" }), done)
 		// finds all records
+	})
+
+	// for collection wide queries and operations
+	it("A model class can update", done => {
+		// finds all the user records with the name of Joe, and change them to alex
+		assertName(User.update({ name: "Joe" }, { name: "Alex" }), done)
+	})
+	it("A model class can update one record", done => {
+		// finds a single user within the User model class, changes its name
+		assertName(
+			User.findOneAndUpdate({ name: "Joe" }, { name: "Alex" }),
+			done
+		)
+	})
+	it("A model class can find a record with an Id an update", done => {
+		// finds a single user within the User model class by id, and update
+		assertName(User.findByIdAndUpdate(joe.id, { name: "Alex" }), done)
 	})
 })
