@@ -30,4 +30,6 @@ describe("Reading users out of the database", () => {
 		// returns a single record / object
 		// User.findOne()
 	})
+
+	it("find a user with a particular id", done => {})
 })
