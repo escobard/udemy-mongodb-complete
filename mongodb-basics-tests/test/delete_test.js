@@ -15,6 +15,9 @@ describe("Deleting a user", () => {
 		// to remove joe from our database
 		joe
 			.remove()
+
+			// then sends a query to find a user by the name of 'Joe', which should
+			// no longer exist
 			.then(() => User.findOne({ name: "Joe" }))
 			.then(user => {
 				assert(user === null)
@@ -32,6 +35,20 @@ describe("Deleting a user", () => {
 			})
 	})
 
-	it("classmethod findAndRemove", () => {})
-	it("class method findByIdAndRemove", () => {})
+	it("classmethod findOneAndRemove", done => {
+		User.findOneAndRemove({ name: "Joe" })
+			.then(() => User.findOne({ name: "Joe" }))
+			.then(user => {
+				assert(user === null)
+				done()
+			})
+	})
+	it("class method findByIdAndRemove", done => {
+		User.findByIdAndRemove(joe.id)
+			.then(() => User.findOne({ name: "Joe" }))
+			.then(user => {
+				assert(user === null)
+				done()
+			})
+	})
 })
