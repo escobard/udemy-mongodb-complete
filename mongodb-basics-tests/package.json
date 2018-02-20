@@ -1,17 +1,16 @@
 {
   "name": "mongodb-basics-tests",
   "version": "1.0.0",
-  "description": "A repository containing all the applications and code from the complete mongoDB developers guide by stephen grider on udemy.",
+  "description":
+    "A repository containing all the applications and code from the complete mongoDB developers guide by stephen grider on udemy.",
   "main": "index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "nodemon --exec mocha"
   },
-  "keywords": [
-    "mongodb"
-  ],
+  "keywords": ["mongodb"],
   "author": "Daniel Escobar",
   "license": "ISC",
   "dependencies": {
